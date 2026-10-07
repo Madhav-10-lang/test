@@ -1,0 +1,109 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: a (input port clocked by __VIRTUAL_CLK__)
+Endpoint: y (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock __VIRTUAL_CLK__ (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00 v input external delay
+                  0.02    0.01    0.01 v a (in)
+     1    0.01                           a (net)
+                  0.02    0.00    0.01 v _1_/B (sky130_fd_sc_hd__and2_4)
+                  0.03    0.15    0.16 v _1_/X (sky130_fd_sc_hd__and2_4)
+     1    0.00                           _0_ (net)
+                  0.03    0.00    0.16 v _2_/A (sky130_fd_sc_hd__buf_6)
+                  0.05    0.14    0.30 v _2_/X (sky130_fd_sc_hd__buf_6)
+     1    0.04                           y (net)
+                  0.05    0.00    0.30 v y (out)
+                                  0.30   data arrival time
+
+                  0.00    0.00    0.00   clock __VIRTUAL_CLK__ (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                         -0.25   -0.25   clock uncertainty
+                          0.00   -0.25   clock reconvergence pessimism
+                          0.00   -0.25   output external delay
+                                 -0.25   data required time
+-----------------------------------------------------------------------------
+                                 -0.25   data required time
+                                 -0.30   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.55   slack (VIOLATED)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+Startpoint: a (input port clocked by __VIRTUAL_CLK__)
+Endpoint: y (output port clocked by __VIRTUAL_CLK__)
+Path Group: __VIRTUAL_CLK__
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock __VIRTUAL_CLK__ (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00 v input external delay
+                  0.02    0.01    0.01 v a (in)
+     1    0.01                           a (net)
+                  0.02    0.00    0.01 v _1_/B (sky130_fd_sc_hd__and2_4)
+                  0.03    0.15    0.16 v _1_/X (sky130_fd_sc_hd__and2_4)
+     1    0.00                           _0_ (net)
+                  0.03    0.00    0.16 v _2_/A (sky130_fd_sc_hd__buf_6)
+                  0.05    0.14    0.30 v _2_/X (sky130_fd_sc_hd__buf_6)
+     1    0.04                           y (net)
+                  0.05    0.00    0.30 v y (out)
+                                  0.30   data arrival time
+
+                  0.00    0.00    0.00   clock __VIRTUAL_CLK__ (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                         -0.25   -0.25   clock uncertainty
+                          0.00   -0.25   clock reconvergence pessimism
+                          0.00   -0.25   output external delay
+                                 -0.25   data required time
+-----------------------------------------------------------------------------
+                                 -0.25   data required time
+                                 -0.30   data arrival time
+-----------------------------------------------------------------------------
+                                 -0.55   slack (VIOLATED)
+
+
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 4 unannotated drivers.
+ a
+ b
+ _1_/X
+ _2_/X
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

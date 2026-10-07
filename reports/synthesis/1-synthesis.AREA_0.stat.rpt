@@ -1,0 +1,18 @@
+
+61. Printing statistics.
+
+=== and_gate ===
+
+   Number of wires:                  4
+   Number of wire bits:              4
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     sky130_fd_sc_hd__and2_4         1
+     sky130_fd_sc_hd__buf_6          1
+
+   Chip area for module '\and_gate': 20.019200
+
