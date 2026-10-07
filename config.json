@@ -1,0 +1,13 @@
+{
+    "DESIGN_NAME": "and_gate",
+    "VERILOG_FILES": ["dir::src/and_gate.v"],
+    "CLOCK_PORT": null,
+    "CLOCK_PERIOD": 0,
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 100 100",
+    "FP_CORE_UTIL": 40,
+    "PL_TARGET_DENSITY": 0.55,
+    "FP_PDN_MULTIGRID": false,
+    "QUIT_ON_TIMING_VIOLATIONS": false,
+    "QUIT_ON_SETUP_VIOLATIONS": false
+}
